@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-25 13:42:46 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.uca.meeting.pojos.UcaMrApply" table="uca_mr_apply">
+        <id name="applyId" type="java.lang.Integer">
+            <column name="apply_id" />
+            <generator class="identity" />
+        </id>
+        <property name="mrId" type="java.lang.Integer">
+            <column name="mr_id" />
+        </property>
+        <property name="conferenceName" type="string">
+            <column name="conference_name" length="100" />
+        </property>
+        <property name="meetingBeginTime" type="timestamp">
+            <column name="meeting_begin_time" length="19" />
+        </property>
+        <property name="meetingEndTime" type="timestamp">
+            <column name="meeting_end_time" length="19" />
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" length="1000" />
+        </property>
+        <property name="applyUserId" type="java.lang.Integer">
+            <column name="apply_user_id" />
+        </property>
+        <property name="applyTime" type="timestamp">
+            <column name="apply_time" length="19" />
+        </property>
+        <property name="devices" type="string">
+            <column name="devices" length="255" />
+        </property>
+        <set name="ucaMrApplyUser" table="uca_mr_apply_user" cascade="all" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="apply_id" />
+            </key>
+            <one-to-many class="com.uca.meeting.pojos.UcaMrApplyUser" />
+        </set>
+    </class>
+</hibernate-mapping>

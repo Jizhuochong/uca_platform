@@ -1,0 +1,411 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-4 16:56:21 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.uca.statistic.pojos.UcaOrgArchivesStatistic" table="uca_org_archives_statistic">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="yearValue" type="java.lang.Integer">
+            <column name="year_value" />
+        </property>
+        <!-- <property name="orgId" type="java.lang.Integer">
+            <column name="org_id" />
+        </property>
+        <property name="userId" type="java.lang.Integer">
+            <column name="user_id" />
+        </property> -->
+        <property name="orgName" type="string">
+            <column name="org_name" length="255" />
+        </property>
+        <property name="userName" type="string">
+            <column name="user_name" length="255" />
+        </property>
+        <property name="createUserId" type="java.lang.Integer">
+            <column name="create_user_id" />
+        </property>
+        <property name="createUserPhone" type="string">
+            <column name="create_user_phone" length="32" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" />
+        </property>
+        <property name="code_1" type="java.lang.Integer">
+            <column name="code_1" />
+        </property>
+        <property name="code_2" type="java.lang.Integer">
+            <column name="code_2" />
+        </property>
+        <property name="code_3" type="java.lang.Integer">
+            <column name="code_3" />
+        </property>
+        <property name="code_4" type="java.lang.Integer">
+            <column name="code_4" />
+        </property>
+        <property name="code_5" type="java.lang.Integer">
+            <column name="code_5" />
+        </property>
+        <property name="code_6" type="java.lang.Integer">
+            <column name="code_6" />
+        </property>
+        <property name="code_7" type="java.lang.Integer">
+            <column name="code_7" />
+        </property>
+        <property name="code_8" type="java.lang.Integer">
+            <column name="code_8" />
+        </property>
+        <property name="code_9" type="java.lang.Integer">
+            <column name="code_9" />
+        </property>
+        <property name="code_10" type="java.lang.Integer">
+            <column name="code_10" />
+        </property>
+        <property name="code_11" type="java.lang.Integer">
+            <column name="code_11" />
+        </property>
+        <property name="code_12" type="java.lang.Integer">
+            <column name="code_12" />
+        </property>
+        <property name="code_13" type="java.lang.Integer">
+            <column name="code_13" />
+        </property>
+        <property name="code_14" type="java.lang.Integer">
+            <column name="code_14" />
+        </property>
+        <property name="code_15" type="java.lang.Integer">
+            <column name="code_15" />
+        </property>
+        <property name="code_16" type="java.lang.Integer">
+            <column name="code_16" />
+        </property>
+        <property name="code_17" type="java.lang.Integer">
+            <column name="code_17" />
+        </property>
+        <property name="code_18" type="java.lang.Integer">
+            <column name="code_18" />
+        </property>
+        <property name="code_19" type="java.lang.Integer">
+            <column name="code_19" />
+        </property>
+        <property name="code_20" type="java.lang.Integer">
+            <column name="code_20" />
+        </property>
+		<property name="code_21" type="java.lang.Integer">
+            <column name="code_21" />
+        </property>
+        <property name="code_22" type="java.lang.Integer">
+            <column name="code_22" />
+        </property>
+        <property name="code_23" type="java.lang.Integer">
+            <column name="code_23" />
+        </property>
+        <property name="code_24" type="java.lang.Integer">
+            <column name="code_24" />
+        </property>
+        <property name="code_25" type="java.lang.Integer">
+            <column name="code_25" />
+        </property>
+        <property name="code_26" type="java.lang.Integer">
+            <column name="code_26" />
+        </property>
+        <property name="code_27" type="java.lang.Integer">
+            <column name="code_27" />
+        </property>
+        <property name="code_28" type="java.lang.Integer">
+            <column name="code_28" />
+        </property>
+        <property name="code_29" type="java.lang.Integer">
+            <column name="code_29" />
+        </property>
+        <property name="code_30" type="java.lang.Integer">
+            <column name="code_30" />
+        </property>
+        <property name="code_31" type="java.lang.Integer">
+            <column name="code_31" />
+        </property>
+        <property name="code_32" type="java.lang.Integer">
+            <column name="code_32" />
+        </property>
+        <property name="code_33" type="java.lang.Integer">
+            <column name="code_33" />
+        </property>
+        <property name="code_34" type="java.lang.Integer">
+            <column name="code_34" />
+        </property>
+        <property name="code_35" type="java.lang.Integer">
+            <column name="code_35" />
+        </property>
+        <property name="code_36" type="java.lang.Integer">
+            <column name="code_36" />
+        </property>
+        <property name="code_37" type="java.lang.Integer">
+            <column name="code_37" />
+        </property>
+        <property name="code_38_1" type="java.lang.Integer">
+            <column name="code_38_1" />
+        </property>
+        <property name="code_38_2" type="java.lang.Integer">
+            <column name="code_38_2" />
+        </property>
+        <property name="code_38_3" type="java.lang.Integer">
+            <column name="code_38_3" />
+        </property>
+        <property name="code_39" type="java.lang.Integer">
+            <column name="code_39" />
+        </property>
+        <property name="code_40" type="java.lang.Integer">
+            <column name="code_40" />
+        </property>
+        <property name="code_41" type="java.lang.Integer">
+            <column name="code_41" />
+        </property>
+        <property name="code_42" type="java.lang.Integer">
+            <column name="code_42" />
+        </property>
+        <property name="code_43" type="java.lang.Integer">
+            <column name="code_43" />
+        </property>
+        <property name="code_44" type="java.lang.Integer">
+            <column name="code_44" />
+        </property>
+        <property name="code_45" type="java.lang.Integer">
+            <column name="code_45" />
+        </property>
+        <property name="code_46" type="java.lang.Integer">
+            <column name="code_46" />
+        </property>
+        <property name="code_47" type="java.lang.Integer">
+            <column name="code_47" />
+        </property>
+        <property name="code_48" type="java.lang.Integer">
+            <column name="code_48" />
+        </property>
+        <property name="code_49" type="java.lang.Integer">
+            <column name="code_49" />
+        </property>
+        <property name="code_50" type="java.lang.Integer">
+            <column name="code_50" />
+        </property>
+        <property name="code_51" type="java.lang.Integer">
+            <column name="code_51" />
+        </property>
+        <property name="code_52" type="java.lang.Integer">
+            <column name="code_52" />
+        </property>
+        <property name="code_53" type="java.lang.Integer">
+            <column name="code_53" />
+        </property>
+        <property name="code_54" type="java.lang.Integer">
+            <column name="code_54" />
+        </property>
+        <property name="code_55" type="java.lang.Integer">
+            <column name="code_55" />
+        </property>
+        <property name="code_56" type="java.lang.Integer">
+            <column name="code_56" />
+        </property>
+        <property name="code_57" type="java.lang.Integer">
+            <column name="code_57" />
+        </property>
+        <property name="code_58" type="java.lang.Integer">
+            <column name="code_58" />
+        </property>
+        <property name="code_59" type="java.lang.Integer">
+            <column name="code_59" />
+        </property>
+        <property name="code_60" type="java.lang.Integer">
+            <column name="code_60" />
+        </property>
+        <property name="code_61" type="java.lang.Integer">
+            <column name="code_61" />
+        </property>
+        <property name="code_62" type="java.lang.Integer">
+            <column name="code_62" />
+        </property>
+        <property name="code_63" type="java.lang.Integer">
+            <column name="code_63" />
+        </property>
+        <property name="code_64" type="java.lang.Integer">
+            <column name="code_64" />
+        </property>
+        <property name="code_65" type="java.lang.Integer">
+            <column name="code_65" />
+        </property>
+        <property name="code_66" type="java.lang.Integer">
+            <column name="code_66" />
+        </property>
+        <property name="code_67" type="java.lang.Integer">
+            <column name="code_67" />
+        </property>
+        <property name="code_68" type="java.lang.Integer">
+            <column name="code_68" />
+        </property>
+        <property name="code_69" type="java.lang.Integer">
+            <column name="code_69" />
+        </property>
+        <property name="code_70" type="java.lang.Integer">
+            <column name="code_70" />
+        </property>
+        <property name="code_71" type="java.lang.Integer">
+            <column name="code_71" />
+        </property>
+        <property name="code_72" type="java.lang.Integer">
+            <column name="code_72" />
+        </property>
+        <property name="code_73" type="java.lang.Integer">
+            <column name="code_73" />
+        </property>
+        <property name="code_74" type="java.lang.Integer">
+            <column name="code_74" />
+        </property>
+        <property name="code_75" type="java.lang.Integer">
+            <column name="code_75" />
+        </property>
+        <property name="code_76" type="java.lang.Integer">
+            <column name="code_76" />
+        </property>
+        <property name="code_77" type="java.lang.Integer">
+            <column name="code_77" />
+        </property>
+        <property name="code_78" type="java.lang.Integer">
+            <column name="code_78" />
+        </property>
+        <property name="code_79" type="java.lang.Integer">
+            <column name="code_79" />
+        </property>
+        <property name="code_80" type="java.lang.Integer">
+            <column name="code_80" />
+        </property>
+        <property name="code_81" type="java.lang.Integer">
+            <column name="code_81" />
+        </property>
+        <property name="code_82" type="java.lang.Integer">
+            <column name="code_82" />
+        </property>
+        <property name="code_83" type="java.lang.Integer">
+            <column name="code_83" />
+        </property>
+        <property name="code_84" type="java.lang.Integer">
+            <column name="code_84" />
+        </property>
+        <property name="code_85" type="java.lang.Integer">
+            <column name="code_85" />
+        </property>
+        <property name="code_86" type="java.lang.Integer">
+            <column name="code_86" />
+        </property>
+        <property name="code_87" type="java.lang.Integer">
+            <column name="code_87" />
+        </property>
+        <property name="code_88" type="java.lang.Integer">
+            <column name="code_88" />
+        </property>
+        <property name="code_89" type="java.lang.Integer">
+            <column name="code_89" />
+        </property>
+        <property name="code_90" type="java.lang.Integer">
+            <column name="code_90" />
+        </property>
+        <property name="code_91" type="java.lang.Integer">
+            <column name="code_91" />
+        </property>
+        <property name="code_92" type="java.lang.Integer">
+            <column name="code_92" />
+        </property>
+        <property name="code_93" type="java.lang.Integer">
+            <column name="code_93" />
+        </property>
+        <property name="code_94" type="java.lang.Integer">
+            <column name="code_94" />
+        </property>
+        <property name="code_95" type="java.lang.Integer">
+            <column name="code_95" />
+        </property>
+        <property name="code_96" type="java.lang.Integer">
+            <column name="code_96" />
+        </property>
+        <property name="code_97" type="java.lang.Integer">
+            <column name="code_97" />
+        </property>
+        <property name="code_98" type="java.lang.Integer">
+            <column name="code_98" />
+        </property>
+        <property name="code_99" type="java.lang.Integer">
+            <column name="code_99" />
+        </property>
+        <property name="code_100" type="java.lang.Integer">
+            <column name="code_100" />
+        </property>
+        <property name="code_101" type="java.lang.Integer">
+            <column name="code_101" />
+        </property>
+        <property name="code_102" type="java.lang.Integer">
+            <column name="code_102" />
+        </property>
+        <property name="code_103" type="java.lang.Integer">
+            <column name="code_103" />
+        </property>
+        <property name="code_104" type="java.lang.Integer">
+            <column name="code_104" />
+        </property>
+        <property name="code_105" type="java.lang.Integer">
+            <column name="code_105" />
+        </property>
+        <property name="code_106" type="java.lang.Integer">
+            <column name="code_106" />
+        </property>
+        <property name="code_107" type="java.lang.Integer">
+            <column name="code_107" />
+        </property>
+        <property name="code_108" type="java.lang.Integer">
+            <column name="code_108" />
+        </property>
+        <property name="code_109" type="java.lang.Integer">
+            <column name="code_109" />
+        </property>
+        <property name="code_110" type="java.lang.Integer">
+            <column name="code_110" />
+        </property>
+        <property name="code_111" type="java.lang.Integer">
+            <column name="code_111" />
+        </property>
+        <property name="code_112" type="java.lang.Integer">
+            <column name="code_112" />
+        </property>
+        <property name="code_113" type="java.lang.Integer">
+            <column name="code_113" />
+        </property>
+        <property name="code_114" type="java.lang.Integer">
+            <column name="code_114" />
+        </property>
+        <property name="code_115" type="java.lang.Integer">
+            <column name="code_115" />
+        </property>
+        <property name="code_116" type="java.lang.Integer">
+            <column name="code_116" />
+        </property>
+        <property name="code_117" type="java.lang.Integer">
+            <column name="code_117" />
+        </property>
+        <property name="code_118" type="java.lang.Integer">
+            <column name="code_118" />
+        </property>
+        <property name="code_119" type="java.lang.Integer">
+            <column name="code_119" />
+        </property>
+        <property name="code_120" type="java.lang.Integer">
+            <column name="code_120" />
+        </property>
+        <property name="code_121" type="java.lang.Integer">
+            <column name="code_121" />
+        </property>
+        <property name="code_122" type="java.lang.Integer">
+            <column name="code_122" />
+        </property>
+        <property name="code_123" type="java.lang.Integer">
+            <column name="code_123" />
+        </property>
+    </class>
+</hibernate-mapping>

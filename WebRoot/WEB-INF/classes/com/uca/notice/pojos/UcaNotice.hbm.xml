@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-25 13:42:46 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.uca.notice.pojos.UcaNotice" table="uca_notice">
+        <id name="noticeId" type="java.lang.Integer">
+            <column name="notice_id" />
+            <generator class="identity" />
+        </id>
+        <property name="title" type="string">
+            <column name="title" length="100" />
+        </property>
+        <property name="content" type="string">
+            <column name="content" length="4000" />
+        </property>
+        <property name="releaseStatus" type="java.lang.Integer">
+            <column name="release_status">
+                <comment>&#210;&#209;&#183;&#162;&#178;&#188;&#163;&#186;1&#161;&#162;&#206;&#180;&#183;&#162;&#178;&#188;&#163;&#186;2</comment>
+            </column>
+        </property>
+        <property name="releaseUserId" type="java.lang.Integer">
+            <column name="release_user_id" />
+        </property>
+        <property name="releaseTime" type="timestamp">
+            <column name="release_time" length="19" />
+        </property>
+        <property name="createUserId" type="java.lang.Integer">
+            <column name="create_user_id" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" />
+        </property>
+        <property name="updateUserId" type="java.lang.Integer">
+            <column name="update_user_id" />
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="update_time" length="19" />
+        </property>
+        <property name="fileUrl" type="string">
+            <column name="file_url" length="100" />
+        </property>
+        <property name="sourceFileName" type="string">
+            <column name="source_file_name" length="100" />
+        </property>
+        <property name="fileFormat" type="string">
+            <column name="file_format" length="10" />
+        </property>
+        <property name="fileSize" type="string">
+            <column name="file_size" length="10" />
+        </property>
+        <property name="releaseObj" type="java.lang.Integer">
+            <column name="release_obj" />
+        </property>
+        <property name="contactUser" type="string">
+            <column name="contact_user" length="100" />
+        </property>
+        <property name="tel" type="string">
+            <column name="tel" length="20" />
+        </property>
+        <property name="fax" type="string">
+            <column name="fax" length="20" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

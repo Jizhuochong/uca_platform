@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.uca.meeting.pojos.UcaMrApplyUser" table="uca_mr_apply_user">
+        <id name="applyUserId" type="java.lang.Integer">
+            <column name="apply_user_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="ucaMrApply" class="com.uca.meeting.pojos.UcaMrApply" fetch="select">
+            <column name="apply_id" />
+        </many-to-one>
+        <property name="userId" type="java.lang.Integer">
+            <column name="user_id" />
+        </property>
+        <property name="flagRead" type="java.lang.Integer">
+            <column name="flag_read" />
+        </property>
+    </class>
+</hibernate-mapping>

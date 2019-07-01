@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.uca.notice.pojos.UcaNoticeUser" table="uca_notice_user">
+        <id name="nUserId" type="java.lang.Integer">
+            <column name="n_user_id" />
+            <generator class="identity" />
+        </id>
+        <property name="noticeId" type="java.lang.Integer">
+            <column name="notice_id"/>
+        </property>
+        <property name="orgId" type="java.lang.Integer">
+            <column name="org_id" />
+        </property>
+        <property name="userId" type="java.lang.Integer">
+            <column name="user_id" />
+        </property>
+        <property name="isRead" type="java.lang.Integer">
+            <column name="is_read" />
+        </property>
+        <property name="readTime" type="timestamp">
+            <column name="read_time" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

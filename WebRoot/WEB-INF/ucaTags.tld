@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+	<!--<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">-->
+	<tlib-version>1.0</tlib-version>
+	<short-name>uca</short-name>
+	<uri>http://www.uca.com/tags</uri>
+	<tag>
+		<name>hres</name><!-- 标签名 -->
+		<tag-class>com.uca.tags.IsHaveResourceTag</tag-class>
+		<body-content>scriptless</body-content>
+		<!-- 标签属性 -->
+		<attribute>
+			<name>url</name><!-- 属性名称 -->
+			<required>true</required><!-- 是否必须 -->
+			<rtexprvalue>true</rtexprvalue><!-- 是否为动态标签 -->
+		</attribute>
+		<attribute>
+			<name>userid</name><!-- 属性名称 -->
+			<required>true</required><!-- 是否必须 -->
+			<rtexprvalue>true</rtexprvalue><!-- 是否为动态标签 -->
+		</attribute>
+	</tag>
+	<function>
+		<name>
+        isHaveResource
+		</name>
+		<function-class>com.uca.funs.IsHaveResourceFun</function-class>
+		<function-signature>java.lang.Boolean isHaveResource(java.lang.String,java.lang.Integer)</function-signature>
+	</function>
+</taglib>

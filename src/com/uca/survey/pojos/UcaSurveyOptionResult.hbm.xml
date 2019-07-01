@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-25 13:42:46 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.uca.survey.pojos.UcaSurveyOptionResult" table="uca_survey_option_result">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="ucaSurvey" class="com.uca.survey.pojos.UcaSurvey" fetch="select">
+            <column name="survey_id" />
+        </many-to-one>
+        <many-to-one name="ucaSurveyOption" class="com.uca.survey.pojos.UcaSurveyOption" fetch="select">
+            <column name="option_id" />
+        </many-to-one>
+        <property name="resultUserId" type="java.lang.Integer">
+            <column name="result_user_id" />
+        </property>
+        <property name="resultTime" type="timestamp">
+            <column name="result_time" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

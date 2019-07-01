@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="GBK" ?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+    <action-mappings>
+        <action path="/index" type="com.gtc.big.action.IndexAction"
+                unknown="true">
+            <forward name="success" path="/Index.jsp"/>
+        </action>
+        <action path="/manageArticle"
+			type="com.gtc.gb.action.ManageArticleAction" parameter="method">
+			<forward name="list" path="/ArticleList.jsp" />
+			<forward name="mainList" path="/ArticleListMain.jsp" />
+			<forward name="view" path="/ArticleView.jsp" />
+			<forward name="mainView" path="/ArticleMainView.jsp" />
+			<forward name="simpleSearch" path="/ArticleSimpleSearch.jsp" />
+			<forward name="complexSearchPage" path="/ArticleComplexSearchPage.jsp" />
+			<forward name="complexSearch" path="/ArticleComplexSearch.jsp" />
+			<forward name="mainComplexSearchPage" path="/ArticleMainComplexSearchPage.jsp" />
+			<forward name="mainComplexSearch" path="/ArticleMainComplexSearch.jsp" />
+			<forward name="search" path="/ArticleSearchList.jsp" />
+		</action>
+		 <action path="/showArticle" type="com.gtc.gb.action.ShowArticleAction">
+            <forward name="success" path="/Level2Main.jsp"/>
+        </action>
+        <action path="/showPicArticle" type="com.gtc.gb.action.ShowPicArticleAction">
+            <forward name="success" path="/ArticleList.jsp"/>
+        </action>
+        <action path="/postManageArticle" type="com.gtc.gb.action.PostManageArticleAction">
+            <forward name="success" path="/articleInclude.jsp"/>
+        </action>
+		 <action path="/showArticleMain" type="com.gtc.gb.action.ShowArticleMainAction">
+            <forward name="success" path="/Level2Main.jsp"/>
+        </action>
+	    <action path="/manageConsult" type="com.gtc.gb.action.ManageConsultAction"
+	            parameter="method">
+	      <forward name="list" path="/ConsultList.jsp"/>
+	      <forward name="view" path="/ConsultView.jsp"/>
+	      <forward name="create" path="/ConsultCreateResult.jsp"/>
+	      <forward name="showView" path="/ConsultShowView.jsp" />
+	    </action>
+	    <action path="/manageComment" type="com.gtc.gb.action.ManageCommentAction" 
+	    		parameter="method">
+	    	<forward name="create" path="/CommentCreate.jsp" />
+	    	
+	   	</action>
+        <action path="/getPoll" type="com.gtc.gb.action.GetPollAction">
+            <forward name="success" path="/Poll.jsp"/>
+        </action>
+        <action path="/postPoll" type="com.gtc.gb.action.PostPollAction">
+            <forward name="postPoll" path="/PollResult.jsp"/>
+        </action>
+        <action path="/managePolicy" parameter="method" type="com.gtc.gb.action.ManagePolicyAction">
+            <forward name="list" path="/PolicyList.jsp"/>
+            <forward name="view" path="/PolicyView.jsp"/>
+            <forward name="searchPage" path="/PolicySearchPage.jsp"/>
+            <forward name="search" path="/PolicySearch.jsp"/>
+        </action>
+        <action path="/simpleSearchArticle"
+                type="com.gtc.gb.action.SimpleSearchArticleAction">
+                <forward name="success" path="/ArticleSearchList.jsp"/>
+        </action>
+        <action path="/addUser" type="com.gtc.gb.action.AddUserAction">
+            <forward name="success" path="/index.do" redirect="true"/>
+        </action>
+        <action path="/checkFile" parameter="method"
+        	 type="com.gtc.web.action.CheckFileAction">
+		  <forward name="download" path="../file.do" redirect="true"/>
+		  <forward name="checkPassword" path="/FileCheckPassword.jsp"/>
+		  <forward name="pass" path="../file.do" redirect="true"/>
+		  <forward name="noPass" path="/FileCheckPasswordFail.jsp"/>
+		</action>		
+    </action-mappings>
+</struts-config>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.uca.ucasecurity.pojos.UmUserExpand" table="um_user_expand">
+<!-- 		<cache usage="read-write" />缓存 -->
+		<id name="userId" column="user_id" length="20" type="integer">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="type" column="type"></property>
+		<property name="orgId" column="org_id"></property>
+		<property name="phoneNum" column="phone_num"></property>
+		<property name="telephone" column="telephone"></property>
+		<property name="sex" column="sex"></property>
+		<property name="email" column="email"></property>
+		<property name="devOrg" column="dev_org"></property>
+		<property name="devOrgAddress" column="dev_org_address"></property>
+		<property name="remark" column="remark"></property>
+		<property name="applyActivateTime" column="apply_activate_time"></property>
+	</class>
+</hibernate-mapping>

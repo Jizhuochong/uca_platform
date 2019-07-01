@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.uca.ucasecurity.pojos.UmOrg" table="um_org">
+<!-- 		<cache usage="read-write" />缓存 -->
+		<id name="orgId" column="org_id" length="20" type="integer">
+			<generator class="native"></generator>
+		</id>
+		<property name="orgName" column="org_name"></property>
+		<property name="parentOrgId" column="parent_org_id"></property>
+		<property name="orgCode" column="org_code"></property>
+		<property name="parentOrgCode" column="parent_org_code"></property>
+		<property name="description" column="description"></property>
+		<property name="createTime" column="create_time"></property>
+		<property name="updateTime" column="update_time"></property>
+		<property name="createUserId" column="create_user_id"></property>
+		<property name="updateUserId" column="update_user_id"></property>
+		<property name="sort" column="sort"></property>
+		<property name="type" column="type"></property>
+	</class>
+</hibernate-mapping>

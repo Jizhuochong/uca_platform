@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-25 13:42:46 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.uca.survey.pojos.UcaSurvey" table="uca_survey">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="title" type="string">
+            <column name="title" length="255" />
+        </property>
+        <property name="type" type="java.lang.Integer">
+            <column name="type">
+            </column>
+        </property>
+        <property name="createUserId" type="java.lang.Integer">
+            <column name="create_user_id" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" />
+        </property>
+        <property name="updateUserId" type="java.lang.Integer">
+            <column name="update_user_id" />
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="update_time" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

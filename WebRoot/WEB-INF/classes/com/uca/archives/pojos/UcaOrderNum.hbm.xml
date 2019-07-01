@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-4 16:56:21 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.uca.archives.pojos.UcaOrderNum" table="uca_order_num">
+        <id name="idYear" type="java.lang.Integer">
+            <column name="id_year" />
+            <generator class="identity" />
+        </id>
+        <property name="start" type="java.lang.Integer">
+            <column name="start" not-null="true" />
+        </property>
+        <property name="end" type="java.lang.Integer">
+            <column name="end" not-null="true">
+            </column>
+        </property>
+        <property name="current" type="java.lang.Integer">
+            <column name="current" not-null="true">
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

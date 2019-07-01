@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-4 16:56:21 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.uca.apply.pojos.UcaAuditWorkStatistics" table="uca_audit_work_statistics">
+        <id name="workId" type="java.lang.Integer">
+            <column name="work_id" />
+            <generator class="identity" />
+        </id>
+        <property name="userId" type="java.lang.Integer">
+            <column name="user_id">
+            </column>
+        </property>
+        <property name="projectName" type="string">
+            <column name="project_name" length="255" />
+        </property>
+        <property name="picNum" type="java.lang.Integer">
+            <column name="pic_num">
+            </column>
+        </property>
+        <property name="picSize" type="java.lang.Double">
+            <column name="pic_size">
+            </column>
+        </property>
+        <property name="movMinute" type="java.lang.Integer">
+            <column name="mov_minute">
+            </column>
+        </property>
+        <property name="movSize" type="java.lang.Double">
+            <column name="mov_size">
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

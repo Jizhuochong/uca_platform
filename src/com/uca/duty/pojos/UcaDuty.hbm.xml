@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.uca.duty.pojos.UcaDuty" table="uca_duty">
+        <id name="dutyId" type="java.lang.Integer">
+            <column name="duty_id" />
+            <generator class="identity" />
+        </id>
+        <property name="dutyDate" type="date">
+            <column name="duty_date" length="10" />
+        </property>
+        <property name="lunarCalendar" type="date">
+            <column name="lunar_calendar" length="10" />
+        </property>
+        <property name="week" type="string">
+            <column name="week" length="4" />
+        </property>
+        <property name="dayShiftUser" type="string">
+            <column name="day_shift_user" length="50" />
+        </property>
+        <property name="nightShiftUser" type="string">
+            <column name="night_shift_user" length="50" />
+        </property>
+        <property name="leader" type="string">
+            <column name="leader" length="50" />
+        </property>
+        <property name="createUserId" type="java.lang.Integer">
+            <column name="create_user_id" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" />
+        </property>
+        <property name="updateUserId" type="java.lang.Integer">
+            <column name="update_user_id" />
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="update_time" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

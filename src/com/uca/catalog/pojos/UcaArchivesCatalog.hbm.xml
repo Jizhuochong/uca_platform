@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-4 16:56:21 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.uca.catalog.pojos.UcaArchivesCatalog" table="uca_archives_catalog">
+        <id name="catalogId" type="java.lang.Integer">
+            <column name="catalog_id" />
+            <generator class="identity" />
+        </id>
+        <!-- <many-to-one name="ucaArchives" class="com.uca.archives.pojos.UcaArchives" fetch="select">
+            <column name="archives_num">
+                <comment>&#185;&#164;&#179;&#204;&#181;&#181;&#176;&#184;&#181;&#231;&#215;&#211;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </many-to-one> -->
+        <property name="archivesNum" type="string">
+            <column name="archives_num" length="20" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="project_name" length="200" />
+        </property>
+        <property name="devOrg" type="string">
+            <column name="dev_org" length="200" />
+        </property>
+        <property name="projectAddress" type="string">
+            <column name="project_address" length="200" />
+        </property>
+        <property name="planPerNum" type="string">
+            <column name="plan_per_num" length="50" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" />
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="update_time" length="19" />
+        </property>
+        <property name="createUserId" type="java.lang.Integer">
+            <column name="create_user_id" />
+        </property>
+        <property name="updateUserId" type="java.lang.Integer">
+            <column name="update_user_id" />
+        </property>
+        <property name="designUnit" type="string">
+            <column name="design_unit" length="255" />
+        </property>
+        <property name="constructionUnit" type="string">
+            <column name="construction_unit" length="255" />
+        </property>
+    </class>
+</hibernate-mapping>

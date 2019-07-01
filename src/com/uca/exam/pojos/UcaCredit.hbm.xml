@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-25 13:42:46 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.uca.exam.pojos.UcaCredit" table="uca_credit">
+        <id name="creditId" type="java.lang.Integer">
+            <column name="credit_id" />
+            <generator class="identity" />
+        </id>
+        <property name="epId" type="java.lang.Integer">
+            <column name="ep_id" />
+        </property>
+        <property name="answerUserId" type="java.lang.Integer">
+            <column name="answer_user_id" />
+        </property>
+        <property name="results" type="java.lang.Integer">
+            <column name="results" />
+        </property>
+        <property name="credits" type="java.lang.Integer">
+            <column name="credits" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

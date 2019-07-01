@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-4 16:56:21 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.uca.archives.pojos.UcaArchives" table="uca_archives">
+        <id name="archivesId" type="java.lang.Integer">
+            <column name="archives_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="ucaArchivesClass" class="com.uca.arclass.pojos.UcaArchivesClass" fetch="select">
+            <column name="class_id" />
+        </many-to-one>
+        <property name="archivesNum" type="string">
+            <column name="archives_num" length="13"/>
+        </property>
+        <property name="orderNum" type="string">
+            <column name="order_num" length="13"/>
+        </property>
+        <property name="projectName" type="string">
+            <column name="project_name" length="100"/>
+        </property>
+        <property name="type" type="java.lang.Integer">
+            <column name="type">
+                <comment>1:&#185;&#164;&#179;&#204;&#181;&#181;&#176;&#184;,0:&#201;&#249;&#207;&#241;&#181;&#181;&#176;&#184;</comment>
+            </column>
+        </property>
+        <property name="uploadTime" type="timestamp">
+            <column name="upload_time" length="19" />
+        </property>
+        <property name="uploadUserId" type="java.lang.Integer">
+            <column name="upload_user_id">
+                <comment>&#211;&#195;&#187;&#167;ID&#163;&#168;&#189;&#168;&#201;&#232;&#181;&#165;&#206;&#187;&#211;&#195;&#187;&#167;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="uploadOrgName" type="string">
+            <column name="upload_org_name" length="50">
+                <comment>&#189;&#168;&#201;&#232;&#181;&#165;&#206;&#187;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="fileUrl" type="string">
+            <column name="file_url" length="100" />
+        </property>
+        <property name="sourceFileName" type="string">
+            <column name="source_file_name" length="100" />
+        </property>
+        <property name="checkStatus" type="java.lang.Integer">
+            <column name="check_status">
+                <comment>
+                0:&#206;&#180;&#201;&#243;&#186;&#203;,1:&#180;&#253;&#201;&#243;&#186;&#203;,2:&#201;&#243;&#186;&#203;&#178;&#187;&#205;&#168;&#185;&#253;,3:&#201;&#243;&#186;&#203;&#205;&#168;&#185;&#253;,4:&#210;&#209;&#214;&#216;&#180;&#171;</comment>
+            </column>
+        </property>
+        <property name="handingPersonId" type="java.lang.Integer">
+            <column name="handing_person_id">
+                <comment>&#211;&#195;&#187;&#167;ID</comment>
+            </column>
+        </property>
+        <property name="instruction" type="string">
+            <column name="instruction" length="500" />
+        </property>
+        <property name="checkTime" type="timestamp">
+            <column name="check_time" length="19" />
+        </property>
+        <property name="copyStatus" type="java.lang.Integer">
+            <column name="copy_status">
+                <comment>1:&#191;&#201;&#192;&#180;&#185;&#221;&#200;&#161;&#188;&#254;,0:&#201;&#208;&#206;&#180;&#176;&#236;&#192;&#237;&#205;&#234;&#179;&#201;</comment>
+            </column>
+        </property>
+        <property name="intoFileStatus" type="java.lang.Integer">
+            <column name="into_file_status"/>
+        </property>
+        <property name="workUserId" type="java.lang.Integer">
+            <column name="work_user_Id">
+                <comment>&#211;&#195;&#187;&#167;ID</comment>
+            </column>
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="update_time" length="19" />
+        </property>
+        <property name="updateUserId" type="java.lang.Integer">
+            <column name="update_user_id">
+                <comment>&#211;&#195;&#187;&#167;ID(&#189;&#168;&#201;&#232;&#181;&#165;&#206;&#187;&#211;&#195;&#187;&#167;)</comment>
+            </column>
+        </property>
+        <property name="queryStatus" type="java.lang.Integer">
+            <column name="query_status">
+                <comment>1:&#210;&#209;&#212;&#164;&#212;&#188;,2:&#191;&#201;&#212;&#164;&#212;&#188;</comment>
+            </column>
+        </property>
+        <property name="sourceId" type="java.lang.Integer">
+            <column name="source_id">
+                <comment>&#212;&#173;&#202;&#188;&#188;&#199;&#194;&#188;&#181;&#196;&#214;&#247;&#188;&#252;</comment>
+            </column>
+        </property>
+        <property name="fileUrlOther" type="string">
+            <column name="file_url_other" length="100" />
+        </property>
+        <property name="sourceFileNameOther" type="string">
+            <column name="source_file_name_other" length="100" />
+        </property>
+        <property name="renameStatus" type="java.lang.Integer">
+            <column name="rename_status">
+            </column>
+        </property>
+        <set name="ucaArchivesCatalogs" table="uca_archives_catalog" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="archives_id">
+                    <comment>&#185;&#164;&#179;&#204;&#181;&#181;&#176;&#184;&#181;&#231;&#215;&#211;&#177;&#224;&#186;&#197;</comment>
+                </column>
+            </key>
+            <one-to-many class="com.uca.catalog.pojos.UcaArchivesCatalog" />
+        </set>
+        <set name="ucaApplyQueryRecords" table="uca_apply_query_record" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="archives_id">
+                    <comment>&#185;&#164;&#179;&#204;&#181;&#181;&#176;&#184;&#181;&#231;&#215;&#211;&#177;&#224;&#186;&#197;</comment>
+                </column>
+            </key>
+            <one-to-many class="com.uca.apply.pojos.UcaApplyQueryRecord" />
+        </set>
+    </class>
+</hibernate-mapping>

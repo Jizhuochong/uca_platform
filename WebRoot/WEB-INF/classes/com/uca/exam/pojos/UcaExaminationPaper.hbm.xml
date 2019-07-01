@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-25 13:42:46 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.uca.exam.pojos.UcaExaminationPaper" table="uca_examination_paper">
+        <id name="epId" type="java.lang.Integer">
+            <column name="ep_id" />
+            <generator class="identity" />
+        </id>
+        <property name="epName" type="string">
+            <column name="ep_name" length="50" />
+        </property>
+        <property name="examTime" type="java.lang.Integer">
+            <column name="exam_time" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>
+                &#210;&#209;&#189;&#225;&#202;&#248;&#163;&#186;3&#161;&#162;&#191;&#188;&#202;&#212;&#214;&#208;&#163;&#186;2&#161;&#162;&#177;&#163;&#180;&#230;&#163;&#186;1</comment>
+            </column>
+        </property>
+        <property name="passScore" type="java.lang.Integer">
+            <column name="pass_score" />
+        </property>
+        <property name="period" type="java.lang.Integer">
+            <column name="period" />
+        </property>
+        <property name="createUserId" type="java.lang.Integer">
+            <column name="create_user_id" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" />
+        </property>
+        <property name="updateUserId" type="java.lang.Integer">
+            <column name="update_user_id" />
+        </property>
+        <property name="updateTime" type="timestamp">
+            <column name="update_time" length="19" />
+        </property>
+        <set name="ucaExaminationQuestions" table="uca_examination_question" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ep_id" />
+            </key>
+            <one-to-many class="com.uca.exam.pojos.UcaExaminationQuestion" />
+        </set>
+    </class>
+</hibernate-mapping>

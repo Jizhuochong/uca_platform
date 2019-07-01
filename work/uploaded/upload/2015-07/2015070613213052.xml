@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+    <diskStore path="java.io.tmpdir"/>
+    <defaultCache
+        maxElementsInMemory="10000"
+        eternal="false"
+        timeToIdleSeconds="120"
+        timeToLiveSeconds="120"
+        overflowToDisk="true"
+        />
+    <cache name="scis_cache"
+        maxElementsInMemory="10000"
+        eternal="true"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        overflowToDisk="true"
+        />
+</ehcache>
+
+<!-- 
+	maxElementsInMemory 设置保存在内存中的缓存对象的最大数量
+	eternal 设置为true表示忽略超时设置,缓存中的对象永不过期
+	timeToIdleSeconds 设置缓存中的对象在过期之前的最大空闲时间,单位秒
+	timeToLiveSeconds 设置缓存中的对象在过期之前的最大生存时间,单位秒
+	overflowToDisk 设置缓存中的对象达到maxElementsInMemory限制时是否将缓存对象保存到硬盘中 
+ -->

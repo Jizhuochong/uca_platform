@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+            http://www.springframework.org/schema/security
+            http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+	<http pattern="/toLogin" security="none" />
+	<http pattern="/resources/**" security="none" />
+	<http pattern="/error/**" security="none" />
+	<http pattern="/checkIdentifyingCode" security="none" />
+	<http pattern="/archives_schedule/**" security="none" />
+	<http pattern="/archives_catalog/**" security="none"/>
+	<http pattern="/ucaRegist/**" security="none"/>
+	<http pattern="/orgusertree/**" security="none"/>
+	<!-- 使用uploadify插件上传文件过滤URL -->
+	<http pattern="/fileupload/uploadifyMutil" security="none" />
+	<http pattern="/favicon.ico" security="none" />
+	<http pattern="/download/**" security="none" />
+	<http pattern="/checkresult/**" security="none" />
+	<http access-denied-page="/accessDenied"><!-- 当访问被拒绝时，会转到accessDenied.jsp -->
+		<form-login login-page="/toLogin" login-processing-url="/j_spring_security_check" default-target-url="/toIndex" always-use-default-target="true"
+			authentication-failure-url="/toLogin?error=true" />
+		<logout invalidate-session="true" logout-success-url="/toLogin"
+			logout-url="/j_logout" />
+		<!--访问/**资源的用户必须具有ROLE_USER的权限 -->
+		<!-- <intercept-url pattern="/**" access="ROLE_RF_USER" /> -->
+		<session-management>
+			<!--支持用户同时只能登录一次-->
+			<concurrency-control max-sessions="1"
+				error-if-maximum-exceeded="false" expired-url="/toLogin"/>
+			<!--支持用户同时可以登录100次-->
+			<!--<concurrency-control max-sessions="100"
+				error-if-maximum-exceeded="true" />-->
+		</session-management>
+		<!-- 增加一个filter，这点与Acegi是不一样的，不能修改默认的filter了， 这个filter位于FILTER_SECURITY_INTERCEPTOR之前 -->
+		<custom-filter ref="rfSecurityFilter" before="FILTER_SECURITY_INTERCEPTOR" />
+	</http>
+
+	<!-- 一个自定义的filter，必须包含authenticationManager,accessDecisionManager,securityMetadataSource三个属性， 
+		我们的所有控制将在这三个类中实现，解释详见具体配置 -->
+	<beans:bean id="rfSecurityFilter"
+		class="cn.com.capinfo.security.interceptor.RfFilterSecurityInterceptor">
+		<beans:property name="authenticationManager" ref="rfAuthenticationManager" />
+		<beans:property name="accessDecisionManager" ref="rfAccessDecisionManager" />
+		<beans:property name="securityMetadataSource" ref="rfSecurityMetadataSource" />
+	</beans:bean>
+
+	<!-- 认证管理器，实现用户认证的入口，主要实现UserDetailsService接口即可 -->
+	<authentication-manager alias="rfAuthenticationManager">
+		<authentication-provider ref="authenticationProvider">
+		</authentication-provider>
+	</authentication-manager>
+
+	<beans:bean id="authenticationProvider"
+		class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+		<beans:property name="userDetailsService" ref="ucaUserDetailServiceImpl" />
+		<beans:property name="hideUserNotFoundExceptions"
+			value="false" />
+		<beans:property name="passwordEncoder" ref="passwordEncoder"></beans:property>
+	</beans:bean>
+
+	<beans:bean
+		class="org.springframework.security.authentication.encoding.Md5PasswordEncoder"
+		id="passwordEncoder"></beans:bean>
+
+	<!-- Jcaptcha相关的配置 -->
+	<beans:bean id="captchaService"
+		class="com.octo.captcha.service.image.DefaultManageableImageCaptchaService">
+		<beans:property name="captchaEngine">
+			<!-- <beans:bean class="cn.com.capinfo.security.utils.GMailEngine" /> -->
+			<!-- <beans:bean class="cn.com.capinfo.security.utils.JCaptchaEngine" /> -->
+			<beans:bean class="cn.com.capinfo.security.utils.ImageCodeEngine" />
+		</beans:property>
+		<!-- 默认生成的图片180秒过期 , 可另行设置 <beans:property name="minGuarantedStorageDelayInSeconds" 
+			value="180" /> -->
+	</beans:bean>
+
+</beans:beans>

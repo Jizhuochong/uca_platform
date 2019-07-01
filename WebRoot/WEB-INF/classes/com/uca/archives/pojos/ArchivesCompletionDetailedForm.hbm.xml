@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-4 16:56:21 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.uca.archives.pojos.ArchivesCompletionDetailedForm" table="archives_completion_detailed_form">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="registerId" type="java.lang.Integer">
+            <column name="register_id" />
+        </property>
+        <property name="registerType" type="java.lang.Integer">
+            <column name="register_type" />
+        </property>
+        <property name="projectPurpose" type="string">
+            <column name="project_purpose" length="255" />
+        </property>
+        <property name="categoryStructure" type="string">
+            <column name="category_structure" length="255" />
+        </property>
+        <property name="floors" type="string">
+            <column name="floors" length="255" />
+        </property>
+        <property name="coversArea" type="java.lang.Double">
+            <column name="covers_area" />
+        </property>
+        <property name="constructionArea" type="java.lang.Double">
+            <column name="construction_area" />
+        </property>
+        <property name="buildings" type="string">
+            <column name="buildings" length="255" />
+        </property>
+        <property name="totalInvestment" type="java.lang.Double">
+            <column name="total_investment" />
+        </property>
+        <property name="projectContent" type="string">
+            <column name="project_content" length="255" />
+        </property>
+        <property name="projectQuantity" type="java.lang.Integer">
+            <column name="project_quantity" />
+        </property>
+        <property name="diameterSection" type="string">
+            <column name="diameter_section" length="255" />
+        </property>
+        <property name="diameterLength" type="java.lang.Double">
+            <column name="diameter_length" />
+        </property>
+        <property name="createUserId" type="java.lang.Integer">
+            <column name="create_user_id" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

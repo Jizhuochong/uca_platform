@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.uca.ucasecurity.pojos.UmUser" table="um_user">
+		<id name="userId" column="user_id" length="20" type="integer">
+			<generator class="native"></generator>
+		</id>
+		<property name="userAccount" column="USER_ACCOUNT" length="30" type="string" />
+		<property name="userPassword" column="USER_PASSWORD" length="64" type="string" />
+		<property name="userName" column="USER_NAME" length="50" type="string" />
+		<property name="userRegistTime" column="user_regist_time" length="19" type="timestamp" />
+		<property name="userStatus" column="USER_STATUS" length="4" type="integer" />
+		<property name="orgId" column="ORG_ID" length="20" type="integer" />
+		
+		<set name="umRoles" inverse="false" lazy="true" table="um_user_role" fetch="select">
+            <key>
+                <column name="user_id" length="20" not-null="true" />
+            </key>
+            <many-to-many entity-name="cn.com.capinfo.auth.pojos.Role">
+                <column name="role_id" length="20" not-null="true" />
+            </many-to-many>
+        </set>
+	</class>
+</hibernate-mapping>

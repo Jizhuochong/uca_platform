@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-4 16:56:21 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.uca.apply.pojos.UcaApplyQueryRecord" table="uca_apply_query_record">
+        <id name="aqId" type="java.lang.Integer">
+            <column name="aq_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="ucaArchives" class="com.uca.archives.pojos.UcaArchives" fetch="select">
+            <column name="archives_id">
+                <comment>&#185;&#164;&#179;&#204;&#181;&#181;&#176;&#184;&#181;&#231;&#215;&#211;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </many-to-one>
+        <property name="applyTime" type="timestamp">
+            <column name="apply_time" length="19" />
+        </property>
+        <property name="checkStatus" type="java.lang.Integer">
+            <column name="check_status">
+                <comment>
+                0:&#206;&#180;&#201;&#243;&#186;&#203;,1:&#180;&#253;&#201;&#243;&#186;&#203;,2:&#201;&#243;&#186;&#203;&#178;&#187;&#205;&#168;&#185;&#253;,3:&#201;&#243;&#186;&#203;&#205;&#168;&#185;&#253;</comment>
+            </column>
+        </property>
+        <property name="instruction" type="string">
+            <column name="instruction" length="500" />
+        </property>
+        <property name="checkUserId" type="java.lang.Integer">
+            <column name="check_user_Id">
+                <comment>&#211;&#195;&#187;&#167;ID</comment>
+            </column>
+        </property>
+        <property name="checkTime" type="timestamp">
+            <column name="check_time" length="19" />
+        </property>
+        <property name="appointmentTime" type="timestamp">
+            <column name="appointment_time" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

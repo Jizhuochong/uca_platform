@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-4 16:56:21 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.uca.archives.pojos.ArchivesCompletionRegisterForm" table="archives_completion_register_form">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="type" type="java.lang.Integer">
+            <column name="type" />
+        </property>
+        <property name="archiveWord" type="string">
+            <column name="archive_word" length="255" />
+        </property>
+        <property name="buildWord" type="string">
+            <column name="build_word" length="255" />
+        </property>
+        <property name="buildUnit" type="string">
+            <column name="build_unit" length="255" />
+        </property>
+        <property name="mailingAddress" type="string">
+            <column name="mailing_address" length="255" />
+        </property>
+        <property name="zipCode" type="string">
+            <column name="zip_code" length="8" />
+        </property>
+        <property name="registerPerson" type="string">
+            <column name="register_person" length="16" />
+        </property>
+        <property name="registerDate" type="string">
+            <column name="register_date" length="32" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="16" />
+        </property>
+        <property name="projectName" type="string">
+            <column name="project_name" length="255" />
+        </property>
+        <property name="projectLocation" type="string">
+            <column name="project_location" length="255" />
+        </property>
+        <property name="designUnit" type="string">
+            <column name="design_unit" length="255" />
+        </property>
+        <property name="constructionUnit" type="string">
+            <column name="construction_unit" length="255" />
+        </property>
+        <property name="measureUnit" type="string">
+            <column name="measure_unit" length="255" />
+        </property>
+        <property name="projectType" type="string">
+            <column name="project_type" length="255" />
+        </property>
+        <property name="startDate" type="string">
+            <column name="start_date" length="32" />
+        </property>
+        <property name="completionDate" type="string">
+            <column name="completion_date" length="32" />
+        </property>
+        <property name="totalInvestment" type="java.lang.Double">
+            <column name="total_investment" />
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" length="255" />
+        </property>
+        <property name="archivesManagers" type="string">
+            <column name="archives_managers" length="16" />
+        </property>
+        <property name="createUserId" type="java.lang.Integer">
+            <column name="create_user_id" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

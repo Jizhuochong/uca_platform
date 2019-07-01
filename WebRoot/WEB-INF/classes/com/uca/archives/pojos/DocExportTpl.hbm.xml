@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-4 16:56:21 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.uca.archives.pojos.DocExportTpl" table="doc_export_tpl">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="doctypeval" type="java.lang.Integer">
+            <column name="DOC_TYPE_VAL" />
+        </property>
+        <property name="tplfilename" type="string">
+            <column name="TPL_FILENAME" >
+            </column>
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" >
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

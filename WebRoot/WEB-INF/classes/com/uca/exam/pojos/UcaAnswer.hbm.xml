@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-25 13:42:46 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.uca.exam.pojos.UcaAnswer" table="uca_answer">
+        <id name="answerId" type="java.lang.Integer">
+            <column name="answer_id" />
+            <generator class="identity" />
+        </id>
+        <property name="epId" type="java.lang.Integer">
+            <column name="ep_id" />
+        </property>
+        <property name="eqId" type="java.lang.Integer">
+            <column name="eq_id" />
+        </property>
+        <property name="answerUserId" type="java.lang.Integer">
+            <column name="answer_user_id" />
+        </property>
+        <property name="answerTime" type="timestamp">
+            <column name="answer_time" length="19" />
+        </property>
+        <property name="answers" type="string">
+            <column name="answers" length="4000">
+                <comment>
+                &#200;&#231;&#185;&#251;&#202;&#199;&#182;&#224;&#209;&#161;&#187;&#242;&#204;&#238;&#191;&#213;&#204;&#226;&#163;&#172;&#210;&#212;"|"&#183;&#214;&#184;&#244;&#180;&#240;&#176;&#184;</comment>
+            </column>
+        </property>
+        <property name="score" type="java.lang.Integer">
+            <column name="score" />
+        </property>
+        <property name="readOverId" type="java.lang.Integer">
+            <column name="read_over_id" />
+        </property>
+        <property name="readOverTime" type="timestamp">
+            <column name="read_over_time" length="19" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
+        </property>
+    </class>
+</hibernate-mapping>
